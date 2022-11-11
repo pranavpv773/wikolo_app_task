@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:wikolo_app/app/core/app_colors/app_colors.dart';
 import 'package:wikolo_app/app/core/app_textstyles/app_textstyles.dart';
+import 'package:wikolo_app/app/features/home/view_model/home_notifier.dart';
 import 'package:wikolo_app/app/features/utils/util_map.dart';
 
 class ShortsCard extends StatelessWidget {
@@ -42,7 +44,9 @@ class ShortsCard extends StatelessWidget {
                     child: Icon(
                       Icons.favorite,
                       size: 40.w,
-                      color: AppColors.kSecondary,
+                      color: context.watch<HomeNotifier>().checked
+                          ? AppColors.kSecondary
+                          : AppColors.kWhite,
                     ),
                   ),
                 ),
@@ -79,8 +83,10 @@ class ShortsCard extends StatelessWidget {
                 child: Checkbox(
                   checkColor: AppColors.kWhite,
                   fillColor: MaterialStateProperty.all(Colors.pink),
-                  value: false,
-                  onChanged: (_) {},
+                  value: context.watch<HomeNotifier>().checked,
+                  onChanged: (_) {
+                    context.read<HomeNotifier>().checkBox();
+                  },
                 ),
               ),
               const Text("Vote 10.2K")

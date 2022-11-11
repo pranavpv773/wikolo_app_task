@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/bx.dart';
+import 'package:provider/provider.dart';
 import 'package:wikolo_app/app/core/app_colors/app_colors.dart';
 import 'package:wikolo_app/app/core/app_textstyles/app_textstyles.dart';
 import 'package:wikolo_app/app/features/home/view/widgets/challenge_builder.dart';
+import 'package:wikolo_app/app/features/home/view_model/home_notifier.dart';
 
 import 'widgets/pushup_short_builder.dart';
 import 'widgets/sliver_appbar.dart';
@@ -62,44 +64,49 @@ class HeadingDropWidget extends StatelessWidget {
             "Who did it best?",
             style: AppTextStyles.h1,
           ),
-          Container(
-            width: 100.w,
-            height: 25.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: AppColors.kWhite,
-            ),
-            child: DropdownButton<String>(
-              hint: const Padding(
-                padding: EdgeInsets.only(left: 2.0),
-                child: Text("Completed"),
+          Consumer<HomeNotifier>(builder: (context, val, _) {
+            return Container(
+              width: 100.w,
+              height: 25.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: AppColors.kWhite,
               ),
-              alignment: AlignmentDirectional.center,
-              icon: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: 15.w,
-                  ),
-                  Iconify(
-                    Bx.down_arrow,
-                    size: 12.w,
-                  ),
-                ],
+              child: DropdownButton<String>(
+                value: val.drop,
+                hint: const Padding(
+                  padding: EdgeInsets.only(left: 2.0),
+                  child: Text("Select"),
+                ),
+                alignment: AlignmentDirectional.center,
+                icon: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 15.w,
+                    ),
+                    Iconify(
+                      Bx.down_arrow,
+                      size: 12.w,
+                    ),
+                  ],
+                ),
+                items: <String>[
+                  'Public',
+                  'Private',
+                  'Completed',
+                ].map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (value) {
+                  val.selectDrop(value.toString());
+                },
               ),
-              items: <String>[
-                'Public',
-                'Private',
-                'Completed',
-              ].map((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-              onChanged: (_) {},
-            ),
-          )
+            );
+          })
         ],
       ),
     );
