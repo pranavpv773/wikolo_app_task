@@ -31,7 +31,7 @@ class TextformsField extends StatelessWidget {
           child: Iconify(
             Eva.search_fill,
             size: 5,
-            color: AppColors.kGrey,
+            color: Colors.grey[700] as Color,
           ),
         ),
         enabledBorder: OutlineInputBorder(
@@ -64,7 +64,7 @@ class TextformsField extends StatelessWidget {
         hintStyle: TextStyle(
           height: 1,
           fontSize: 15.sp,
-          color: AppColors.kGrey,
+          color: Colors.grey[700] as Color,
         ),
       ),
     );
