@@ -5,8 +5,8 @@ import 'package:iconify_flutter/icons/bx.dart';
 import 'package:wikolo_app/app/core/app_colors/app_colors.dart';
 import 'package:wikolo_app/app/core/app_textstyles/app_textstyles.dart';
 import 'package:wikolo_app/app/features/home/view/widgets/challenge_builder.dart';
-import 'package:wikolo_app/app/features/home/view/widgets/pushup_short_builder.dart';
 
+import 'widgets/pushup_short_builder.dart';
 import 'widgets/sliver_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
