@@ -38,7 +38,7 @@ class SliverAppBarWidget extends StatelessWidget {
           padding: const EdgeInsets.only(right: 8),
           child: CircleAvatar(
             backgroundImage: const NetworkImage(
-                "https://st.depositphotos.com/1400069/4761/i/600/depositphotos_47618733-stock-photo-girl-profile.jpg"),
+                "https://img.freepik.com/free-photo/pleasant-looking-serious-man-stands-profile-has-confident-expression-wears-casual-white-t-shirt_273609-16959.jpg?w=2000"),
             radius: 23.w,
           ),
         )
