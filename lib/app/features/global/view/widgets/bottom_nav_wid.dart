@@ -35,20 +35,21 @@ class BottomNavWidget extends StatelessWidget {
                 ? AppColors.kWhite
                 : AppColors.kGrey,
           ),
-          label: "Display",
+          label: "Discover",
         ),
         BottomNavigationBarItem(
-            icon: CircleAvatar(
-              backgroundColor: AppColors.kSecondary,
-              radius: 25,
-              child: Center(
-                child: Image.asset(
-                  "assets/icons/thunder.png",
-                  width: 20,
-                ),
+          icon: CircleAvatar(
+            backgroundColor: AppColors.kSecondary,
+            radius: 25,
+            child: Center(
+              child: Image.asset(
+                "assets/icons/thunder.png",
+                width: 20,
               ),
             ),
-            label: ""),
+          ),
+          label: "",
+        ),
         BottomNavigationBarItem(
           icon: Iconify(
             Ic.outline_textsms,
@@ -71,7 +72,6 @@ class BottomNavWidget extends StatelessWidget {
       ],
       currentIndex: context.watch<GlobalNotifier>().selectIndex,
       backgroundColor: AppColors.kPrimary,
-      //  selectedItemColor: AppColors.kSecondary,
       selectedIconTheme: IconThemeData(color: AppColors.kWhite),
       unselectedIconTheme: IconThemeData(color: AppColors.kGrey, size: 30),
       unselectedItemColor: AppColors.kGrey,
