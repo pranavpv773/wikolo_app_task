@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wikolo_app/app/core/app_colors/app_colors.dart';
 import 'package:wikolo_app/app/features/global/view/global_screen.dart';
 
 void main() {
@@ -11,7 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        scaffoldBackgroundColor: AppColors.kPrimary,
         primarySwatch: Colors.blue,
       ),
       home: const GlobalScreen(),
