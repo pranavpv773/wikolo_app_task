@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:provider/provider.dart';
+import 'package:wikolo_app/app/features/global/view_model/global_notifier.dart';
+import 'widgets/bottom_nav_wid.dart';
 
 class GlobalScreen extends StatelessWidget {
   const GlobalScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: context
+          .watch<GlobalNotifier>()
+          .pages[context.read<GlobalNotifier>().selectIndex],
+      bottomNavigationBar: const BottomNavWidget(),
+    );
   }
 }
