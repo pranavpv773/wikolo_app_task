@@ -10,7 +10,7 @@ class ChallengeBuilderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
+      padding: EdgeInsets.only(top: 15.h),
       child: SizedBox(
         height: 120.w,
         child: ListView(
@@ -21,10 +21,10 @@ class ChallengeBuilderWidget extends StatelessWidget {
             (index) => Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(right: 9.w),
+                  padding: EdgeInsets.only(right: 15.w, left: 5.w),
                   child: SizedBox(
-                    width: 60.w,
-                    height: 80.h,
+                    width: 50.w,
+                    height: 70.h,
                     // color: AppColors.kSecondary,
                     child: Stack(
                       children: [
@@ -49,11 +49,11 @@ class ChallengeBuilderWidget extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          bottom: 0,
+                          bottom: 10,
                           left: 0,
                           right: 0,
                           child: CircleAvatar(
-                            radius: 15,
+                            radius: 10,
                             backgroundImage: NetworkImage(
                                 users[index]['profile'].toString()),
                           ),
@@ -63,7 +63,7 @@ class ChallengeBuilderWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20.w,
+                  height: 10.w,
                 ),
                 FittedBox(
                   child: Text(
@@ -71,7 +71,7 @@ class ChallengeBuilderWidget extends StatelessWidget {
                     style: AppTextStyles.h4
                         .copyWith(fontSize: 12, color: AppColors.kGrey),
                   ),
-                )
+                ),
               ],
             ),
           ),

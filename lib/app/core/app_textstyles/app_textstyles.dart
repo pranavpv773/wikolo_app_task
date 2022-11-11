@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:wikolo_app/app/core/app_colors/app_colors.dart';
 
 class AppTextStyles {
-  static TextStyle h1 = const TextStyle(
-    letterSpacing: 1.5,
-    fontWeight: FontWeight.bold,
+  static TextStyle h1 = TextStyle(
+    letterSpacing: 1,
+    fontWeight: FontWeight.w400,
+    color: AppColors.kWhite,
     fontSize: 30,
   );
 
@@ -32,7 +33,5 @@ class AppTextStyles {
     fontSize: 16,
   );
 
-  static TextStyle h4 = const TextStyle(
-    fontSize: 8,
-  );
+  static TextStyle h4 = TextStyle(fontSize: 8, color: AppColors.kWhite);
 }
