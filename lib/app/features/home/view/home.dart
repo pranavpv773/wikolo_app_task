@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wikolo_app/app/core/app_colors/app_colors.dart';
 import 'package:wikolo_app/app/core/app_textstyles/app_textstyles.dart';
+import 'package:wikolo_app/app/features/home/view/widgets/challenge_builder.dart';
+import 'package:wikolo_app/app/features/utils/util_map.dart';
 
 import 'widgets/sliver_appbar.dart';
 
@@ -27,14 +29,7 @@ class HomeScreen extends StatelessWidget {
                 "New Challenges",
                 style: AppTextStyles.h2,
               ),
-              Container(
-                width: 80.w,
-                height: 120.h,
-                color: AppColors.kSecondary,
-                child: Column(
-                  children: const [],
-                ),
-              ),
+              const ChallengeBuilderWidget()
             ],
           ),
         ),
