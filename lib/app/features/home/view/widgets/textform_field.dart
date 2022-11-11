@@ -16,7 +16,7 @@ class TextformsField extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
     return TextFormField(
-      textAlign: TextAlign.center,
+      textAlign: TextAlign.start,
       controller: context.read<HomeNotifier>().searchCntrl,
       style: TextStyle(
         height: 1.5,
