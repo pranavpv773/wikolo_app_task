@@ -37,10 +37,6 @@ class HomeScreen extends StatelessWidget {
                 const ChallengeBuilderWidget(),
                 const HeadingDropWidget(),
                 const CardBuilder(),
-                Divider(
-                  height: 15,
-                  color: AppColors.kSecondary,
-                )
               ],
             ),
           ),
