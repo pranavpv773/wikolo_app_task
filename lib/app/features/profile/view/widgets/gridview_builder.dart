@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:wikolo_app/app/core/app_colors/app_colors.dart';
+import 'package:wikolo_app/app/core/app_textstyles/app_textstyles.dart';
 import 'package:wikolo_app/app/features/profile/view_model/profile_notifier.dart';
 
 class GridviewBuilderWidget extends StatelessWidget {
@@ -41,6 +42,24 @@ class GridviewBuilderWidget extends StatelessWidget {
                   ),
                   fit: BoxFit.fill,
                 ),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Icon(
+                    Icons.play_arrow_outlined,
+                    size: 30,
+                    color: AppColors.kWhite,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(4.w),
+                    child: Text(
+                      "15.2M",
+                      style: AppTextStyles.h2.copyWith(),
+                    ),
+                  )
+                ],
               ),
             ),
           ),

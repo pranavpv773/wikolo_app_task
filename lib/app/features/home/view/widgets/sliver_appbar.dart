@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wikolo_app/app/core/app_colors/app_colors.dart';
+import 'package:wikolo_app/app/core/app_images/app_images.dart';
 
 import 'textform_field.dart';
 
@@ -37,8 +38,7 @@ class SliverAppBarWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 8),
           child: CircleAvatar(
-            backgroundImage: const NetworkImage(
-                "https://img.freepik.com/free-photo/pleasant-looking-serious-man-stands-profile-has-confident-expression-wears-casual-white-t-shirt_273609-16959.jpg?w=2000"),
+            backgroundImage: NetworkImage(AppImages.profile),
             radius: 23.w,
           ),
         )
