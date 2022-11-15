@@ -13,11 +13,11 @@ class ButtonWidget extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(
           vertical: 15.w,
-          horizontal: 50.w,
+          horizontal: 30.w,
         ),
         primary: AppColors.kSecondary,
-        textStyle: const TextStyle(
-            color: Colors.white, fontSize: 25, fontStyle: FontStyle.normal),
+        textStyle: TextStyle(
+            color: Colors.white, fontSize: 25.sp, fontStyle: FontStyle.normal),
       ),
       onPressed: () {},
       child: const Text('ϟ Send your Challenge'),
